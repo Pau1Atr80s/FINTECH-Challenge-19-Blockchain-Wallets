@@ -31,6 +31,7 @@ from typing import Any, List
 from web3 import Web3
 
 w3 = Web3(Web3.HTTPProvider("HTTP://127.0.0.1:7545"))
+
 ################################################################################
 # Step 1:
 # Import Ethereum Transaction Functions into the KryptoJobs2Go Application
@@ -88,6 +89,7 @@ from crypto_wallet import generate_account, get_balance, send_transaction
 
 # Database of KryptoJobs2Go candidates including their name, digital address, rating and hourly cost per Ether.
 # A single Ether is currently valued at $1,500
+
 candidate_database = {
     "Lane": [
         "Lane",
@@ -301,7 +303,7 @@ if st.sidebar.button("Send Transaction"):
     # Your `account`, the `candidate_address`, and the `wage` as parameters
     # Save the returned transaction hash as a variable named `transaction_hash`
     
-    transaction_hash = send_transaction(w3, account, candidate_address, wage)
+    transaction_hash = send_transaction(w3, accountSt, candidate_address, wage)
 
     # Markdown for the transaction hash
     st.sidebar.markdown("#### Validated Transaction Hash")
